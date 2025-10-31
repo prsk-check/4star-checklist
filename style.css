@@ -5,6 +5,26 @@ body {
   padding: 20px;
 }
 
+
+h1 {
+  margin-bottom: 10px;
+}
+
+#resetButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff6666;
+  color: white;
+  transition: background-color 0.2s;
+}
+#resetButton:hover {
+  background-color: #e05555;
+}
+
 .category {
   display: flex;
   align-items: flex-start;
@@ -28,18 +48,20 @@ body {
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(15, 60px);
-  gap: 8px;
+  grid-template-columns: repeat(15, minmax(30px, 6vw)); /* 화면 크기에 따라 자동 조절 */
+  gap: 0.5vw;
   justify-content: center;
 }
 
 .image-grid img {
-  width: 60px;
+  width: 100%;
+  height: auto;
   border-radius: 6px;
   cursor: pointer;
   border: 2px solid #ccc;
   transition: transform 0.1s, border-color 0.2s;
 }
+
 
 .image-grid img:hover {
   transform: scale(1.05);
