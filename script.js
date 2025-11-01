@@ -100,14 +100,7 @@ document.getElementById('resetButton').addEventListener('click', () => {
 
 // 캡쳐 기능 (PNG/JPG 선택 가능)
 document.getElementById("captureButton").addEventListener("click", function () {
-  // 파일 형식 선택 UI 추가
-  let format = prompt("png", "jpg");
-  format = format?.toLowerCase();
-
-  if (format !== "png" && format !== "jpg") {
-    alert("잘못된 형식입니다. png 또는 jpg를 입력해주세요.");
-    return;
-  }
+  const format = document.getElementById("formatSelect").value; // select에서 선택한 값 읽기
 
   html2canvas(document.body, { scale: 1 }).then((canvas) => {
     const link = document.createElement("a");
@@ -116,14 +109,16 @@ document.getElementById("captureButton").addEventListener("click", function () {
       link.download = "cardcheck.png";
       link.href = canvas.toDataURL("image/png");
     } else {
-      // jpg 선택 시 품질 0.8로 손실 압축
+      // JPG 선택 시 품질 0.9로 손실 압축
       link.download = "cardcheck.jpg";
-      link.href = canvas.toDataURL("image/jpeg", 0.8);
+      link.href = canvas.toDataURL("image/jpeg", 0.9);
     }
 
     link.click();
   });
 });
+
+
 
 
 
