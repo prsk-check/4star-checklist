@@ -97,6 +97,15 @@ document.getElementById('resetButton').addEventListener('click', () => {
   });
 });
 
+// 캡쳐 기능
+document.getElementById("captureButton").addEventListener("click", function () {
+  html2canvas(document.body).then((canvas) => {
+    const link = document.createElement("a");
+    link.download = "cardcheck.png"; // 저장될 파일 이름
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  });
+});
 
 
 
