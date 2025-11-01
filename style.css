@@ -25,6 +25,21 @@ h1 {
   background-color: #e05555;
 }
 
+#selectAllButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #66bb6a; /* 초록색 느낌 */
+  color: white;
+  transition: background-color 0.2s;
+}
+#selectAllButton:hover {
+  background-color: #57a65a;
+}
+
 .category {
   display: flex;
   align-items: flex-start;
