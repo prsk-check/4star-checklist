@@ -97,12 +97,30 @@ document.getElementById('resetButton').addEventListener('click', () => {
   });
 });
 
-// 캡쳐 기능
+
+// 캡쳐 기능 (PNG/JPG 선택 가능)
 document.getElementById("captureButton").addEventListener("click", function () {
-  html2canvas(document.body).then((canvas) => {
+  // 파일 형식 선택 UI 추가
+  let format = prompt("png", "jpg");
+  format = format?.toLowerCase();
+
+  if (format !== "png" && format !== "jpg") {
+    alert("잘못된 형식입니다. png 또는 jpg를 입력해주세요.");
+    return;
+  }
+
+  html2canvas(document.body, { scale: 1 }).then((canvas) => {
     const link = document.createElement("a");
-    link.download = "cardcheck.jpg"; // 저장될 파일 이름
-    link.href = canvas.toDataURL("image/jpg");
+
+    if (format === "png") {
+      link.download = "cardcheck.png";
+      link.href = canvas.toDataURL("image/png");
+    } else {
+      // jpg 선택 시 품질 0.8로 손실 압축
+      link.download = "cardcheck.jpg";
+      link.href = canvas.toDataURL("image/jpeg", 0.8);
+    }
+
     link.click();
   });
 });
