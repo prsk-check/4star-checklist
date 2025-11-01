@@ -52,7 +52,7 @@ h1 {
 }
 
 #captureButton:hover {
-  background-color: ##0099CC;
+  background-color: #0099CC;
 }
 
 
@@ -98,6 +98,7 @@ h1 {
   transform: scale(1.05);
   border-color: #666;
 }
+
 
 
 
