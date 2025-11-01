@@ -81,6 +81,14 @@ createCategoryImages('cat53', cat53Images);
 createCategoryImages('cat54', cat54Images);
 
 
+// 모두 선택 기능
+document.getElementById('selectAllButton').addEventListener('click', () => {
+  const allImages = document.querySelectorAll('.image-grid img');
+  allImages.forEach(img => {
+    img.src = img.dataset.on;
+  });
+});
+
 // --- 전체 초기화 버튼 기능 ---
 document.getElementById('resetButton').addEventListener('click', () => {
   const allImages = document.querySelectorAll('.image-grid img');
@@ -88,4 +96,8 @@ document.getElementById('resetButton').addEventListener('click', () => {
     img.src = img.dataset.off;
   });
 });
+
+
+
+
 
