@@ -32,7 +32,7 @@ h1 {
   cursor: pointer;
   border: none;
   border-radius: 6px;
-  background-color: #66bb6a; /* 초록색 느낌 */
+  background-color: #66bb6a;
   color: white;
   transition: background-color 0.2s;
 }
@@ -46,7 +46,7 @@ h1 {
   cursor: pointer;
   border: none;
   border-radius: 6px;
-  background-color: #4caf50;
+  background-color: #00CCFF;
   color: white;
   transition: background-color 0.2s;
 }
@@ -98,4 +98,5 @@ h1 {
   transform: scale(1.05);
   border-color: #666;
 }
+
 
