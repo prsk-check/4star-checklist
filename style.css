@@ -40,6 +40,22 @@ h1 {
   background-color: #57a65a;
 }
 
+#captureButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+#captureButton:hover {
+  background-color: #3d8b40;
+}
+
+
 .category {
   display: flex;
   align-items: flex-start;
@@ -82,3 +98,4 @@ h1 {
   transform: scale(1.05);
   border-color: #666;
 }
+
